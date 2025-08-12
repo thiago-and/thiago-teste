@@ -9,6 +9,6 @@ services:
       SPRING_PROFILES_ACTIVE: prod
     volumes:
       # Descomente se usar H2 com persistência em arquivo
-       - h2data:./data/testdb
+      # - h2data:./data/testdb
 volumes:
   # h2data:

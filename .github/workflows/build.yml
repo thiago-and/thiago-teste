@@ -26,8 +26,3 @@ jobs:
       - name: Push da imagem para o Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/meu-app-spring:latest
 
-
-          key: ${{ secrets.SERVER_SSH_KEY }}
-          script: |
-            cd /caminho/do/app
-            ./deploy.sh

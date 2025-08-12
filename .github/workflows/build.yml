@@ -2,7 +2,7 @@ name: Build and Dockerize Spring App
 
 on:
   push:
-    branches: [ master, main]
+    branches: [ master, main ]
   pull_request:
     branches: [ master, main ]
 
@@ -26,3 +26,14 @@ jobs:
       - name: Push da imagem para o Docker Hub
         run: docker push ${{ secrets.DOCKER_USERNAME }}/meu-app-spring:latest
 
+      - name: Deploy no servidor
+        uses: appleboy/ssh-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            cd /root/./
+            ./deploy.sh          
+            cd /caminho/do
+            ./deploy.sh

@@ -17,7 +17,7 @@ import com.example.produto.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Value;
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/produto")
 public class ProdutoController {
 
     private final ProdutoService service;
@@ -54,7 +54,7 @@ public class ProdutoController {
     @Value("${spring.datasource.username}")
     private String teste;
 
-    @GetMapping("/")
+    @GetMapping("/teste")
     public String bemVindo() {
         return teste+" ok";
     }

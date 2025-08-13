@@ -56,7 +56,7 @@ public class ProdutoController {
 
     @GetMapping("/")
     public String bemVindo() {
-        return teste;
+        return teste+" ok";
     }
 
 }

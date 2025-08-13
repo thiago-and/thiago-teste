@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.produto.model.Produto;
 import com.example.produto.service.ProdutoService;
 
+import org.springframework.beans.factory.annotation.Value;
+
 @RestController
 @RequestMapping("/produtos")
 public class ProdutoController {
@@ -47,6 +49,14 @@ public class ProdutoController {
     @DeleteMapping("/{id}")
     public String deletar(@PathVariable Long id) {
         return service.deletar(id);
+    }
+
+    @Value("${spring.datasource.username}")
+    private String teste;
+
+    @GetMapping("/")
+    public String bemVindo() {
+        return teste;
     }
 
 }

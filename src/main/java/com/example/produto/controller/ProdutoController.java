@@ -17,7 +17,7 @@ import com.example.produto.service.ProdutoService;
 import org.springframework.beans.factory.annotation.Value;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/")
 public class ProdutoController {
 
     private final ProdutoService service;
